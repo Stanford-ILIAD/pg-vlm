@@ -179,6 +179,7 @@ span.highlight {
 .column {
   flex: 50%;
   padding: 0 4px;
+  text-align: center;
 }
 
 .column img {
@@ -192,14 +193,24 @@ span.highlight {
     padding: 10px;
 }
 
+.strict_column img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
 .tcolumn {
     width: 33.3%;
     padding: 10px;
 }
 
 .topnav {
+    margin: 0 auto;
   overflow: hidden;
-  background-color: #333;
+  background-color: #555;
+}
+
+.rightnav {
+    float: right;
 }
 
 .topnav a {
@@ -208,10 +219,25 @@ span.highlight {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 0.8em;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
 }
 
 .topnav a:hover {
   background-color: #ddd;
   color: black;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tbl td, #tbl th {
+  border: 1px solid #dddddd;
+  padding: 2%;
 }

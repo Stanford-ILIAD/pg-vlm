@@ -55,6 +55,18 @@
   <body>
     <div class="topnav">
       <a href="index.html">Home</a>
+      <div class="rightnav">
+	<a href="scene1.html">Scene 1: Countertop</a>
+	<a href="scene2.html">Scene 2: Art Table</a>
+	<a href="scene3.html">Scene 3: Floor</a>
+	<a href="scene4.html">Scene 4: Kitchen A</a>
+	<a href="scene5.html">Scene 5: Kitchen B</a>
+	<a href="scene6.html">Scene 6: Salad Bar</a>
+	<a href="scene7.html" class="active">Scene 7: Living Room</a>
+	<a href="scene8.html">Scene 8: Shelf</a>
+	<a href="RS1/index.html">Robot Scene 1</a>
+	<a href="RS2/index.html">Robot Scene 2</a>
+      </div>
     </div>
     <div class="container" id="main">
       
@@ -66,8 +78,9 @@
 			Scene 7: Living Room
           </h1>
 	  <div class="irow">
-	    <img src="img/eval2_scene7.png"  class="strict_column">
-	    
+	    <div class="strict_column">
+	      <img src="img/eval2_scene7.png">
+	    </div>	    
 	    <div class="strict_column">
 			<p> A: whiteboard </p>
 			<p> B: door [leftmost door] </p>
@@ -93,7 +106,11 @@
 	  </p>
 	  
 	  <h2><b>Task 44: Go to the table that does not have a wooden surface.</b></h2>
+<p class="text-justify">
+	    In this task, we want to determine if the VLM can understand which tables have a wooden surface. Only <span style="color: #0000ff"> O </span> is not made of wood.
+	  </p>
 
+	  <h3>Generated Plans</h3>
 	  <div class="irow">
 	    <div class="tcolumn">
 	      <h3> No VLM </h3>

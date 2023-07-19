@@ -134,6 +134,54 @@
           <p class="text-justify">
 	    Recent advances in vision-language models (VLMs) have led to improved performance on tasks such as visual question answering and image captioning. Consequently, these models are now well-positioned to reason about the physical world, particularly within domains such as robotic manipulation. However, current VLMs are limited in their understanding of the physical concepts (e.g., material, fragility) of common objects, which restricts their usefulness for robotic manipulation tasks that involve interaction and physical reasoning about such objects. To address this limitation, we propose PhysObjects, an object-centric dataset of 36.9K crowd-sourced and 417K automated physical concept annotations of common household objects. We demonstrate that fine-tuning a VLM on PhysObjects improves its understanding of physical object concepts, by capturing human priors of these concepts from visual appearance. We incorporate this physically-grounded VLM in an interactive framework with a large language model-based robotic planner, and show improved planning performance on tasks that require reasoning about physical object concepts, compared to baselines that do not leverage physically-grounded VLMs. We additionally illustrate the benefits of our physically-grounded VLM on a real robot, where it improves task success rate.
           </p>
+
+	  <h3>
+            PhysObjects Dataset
+          </h3>
+          <p class="text-justify">
+	    To benchmark and improve VLMs for object-centric physical reasoning, we compiled the PhysObjects dataset, which contains 36.9K crowd-sourced and 417K automated physical concept annotations. The source of our images is the <a href="https://ai.meta.com/datasets/egoobjects-dataset/">EgoObjects dataset</a>.
+
+	    We collected annotations for eight physical concepts, listed in the table below. We chose these concepts based on prior work and what we believe to be userful for robotic manipulation. However, we do not consider concepts that would be difficult for humans to estimate from only images, such as friction.
+
+	    <table id="tbl">
+	      <tr>
+		<th> Concept </th>
+		<th> Description </th>
+	      </tr>
+	      <tr>
+		<td> Mass </td>
+		<td> How heavy an object is </td>
+	      </tr>
+	      <tr>
+		<td> Fragility </td>
+		<td> How easily an object can be broken/damaged </td>
+	      </tr>
+	      <tr>
+		<td> Deformability </td>
+		<td> How easily an object can change shape without breaking </td>
+	      </tr>
+	      <tr>
+		<td> Material </td>
+		<td> What an object is primarily made of </td>
+	      </tr>
+	      <tr>
+		<td> Transparency </td>
+		<td> How much can be seen through an object  </td>
+	      </tr>
+	      <tr>
+		<td> Contents </td>
+		<td> What is inside a container </td>
+	      </tr>
+	      <tr>
+		<td> Can Contain Liquid </td>
+		<td> If a container can be used to easily carry liquid </td>
+	      </tr>
+	      <tr>
+		<td> Is Sealed </td>
+		<td> If a container will not spill if rotated </td>
+	      </tr>
+	    </table>
+          </p>
           <!-- <p style="text-align:center;"> -->
             <!-- 	    	<video id="v0" width="100%" playsinline autoplay muted loop> -->
 	      <!--           <source src="img/RT1-video.mp4" type="video/mp4"> -->
@@ -179,6 +227,23 @@
 		  </a>
 		</p>
 
+	      </div>
+	      
+	      <div class="column">
+		<h4>
+		  Scene 2: Art Table
+		</h4>
+		<p style="text-align:center;">
+		  <a href="scene2.html">
+		    <img src="img/eval2_scene2.png" class="img-responsive">
+		  </a>
+		</p>
+	      </div>
+	    </div>
+	    
+	    <div class="irow">
+	      <div class="column">
+
 		<h4>
 		  Scene 3: Floor
 		</h4>
@@ -208,14 +273,6 @@
 	      </div>
 	      
 	      <div class="column">
-		<h4>
-		  Scene 2: Art Table
-		</h4>
-		<p style="text-align:center;">
-		  <a href="scene2.html">
-		    <img src="img/eval2_scene2.png" class="img-responsive">
-		  </a>
-		</p>
 
 		<h4>
 		  Scene 4: Kitchen A
@@ -264,7 +321,7 @@
 		    Scene 1: Countertop
 		  </h4>
 		  <p style="text-align:center;">
-		    <a href="https://www.example.com">
+		    <a href="RS1/index.html">
 		      <img src="img/RealScene1.png" class="img-responsive">
 		    </a>
 		  </p>
@@ -275,7 +332,7 @@
 		    Scene 2: Art Table
 		  </h4>
 		  <p style="text-align:center;">
-		    <a href="https://www.example.com">
+		    <a href="RS2/index.html">
 		      <img src="img/RealScene2.png" class="img-responsive">
 		    </a>
 		  </p>

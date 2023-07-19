@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Physically Grounded VLMs</title>
+
+    <meta name="description" content="Physically Grounded VLMs">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+    <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-52J0PM8XKV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-52J0PM8XKV');
+    </script>
+    
+    <style>
+      .nav-pills {
+          position: relative;
+          display: inline;
+      }
+      .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a href="../index.html">Home</a>
+      <div class="rightnav">
+	<a href="../scene1.html">Scene 1: Countertop</a>
+	<a href="../scene2.html">Scene 2: Art Table</a>
+	<a href="../scene3.html">Scene 3: Floor</a>
+	<a href="../scene4.html">Scene 4: Kitchen A</a>
+	<a href="../scene5.html">Scene 5: Kitchen B</a>
+	<a href="../scene6.html">Scene 6: Salad Bar</a>
+	<a href="../scene7.html">Scene 7: Living Room</a>
+	<a href="../scene8.html">Scene 8: Shelf</a>
+	<a href="../RS1/index.html" class="active">Robot Scene 1</a>
+	<a href="../RS2/index.html">Robot Scene 2</a>
+      </div>
+    </div>
+    <div class="container" id="main">
+      
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <br>
+          <h1>
+	    Robot Scene 1
+          </h1>
+	  <div class="irow">
+	    <div class="strict_column">
+	      <img src="../img/RealScene1.png">
+	    </div>
+	    
+	    <div class="strict_column">
+	      <p style="color: #ff0000"> A: Bag </p>
+	      <p style="color: #ff9900"> B: Paint Bottle </p>
+	      <p style="color: #f1c232"> C: Plastic Bowl </p>
+	      <p style="color: #6aa84f"> D: Container of Metals </p>
+	      <p> E: Table (ignore) </p>
+	      <p style="color: #45818e"> F: Saucer </p>
+	      <p style="color: #4a86e8"> G: Ceramic Bowl </p>
+	      <p style="color: #0000ff"> H: Spoon </p>
+	      <p style="color: #9900ff"> I: Pen </p>
+	      <p style="color: #ff00ff"> J: Pencil </p>
+	      <p style="color: #a61c00"> K: Snacks </p>
+
+
+	    </div>
+
+	  </div>
+	  <br>
+	  <p class="text-justify">
+	    Here we provide a scene from our real robot evaluation, and all tasks for it. We provide the object detections from OWL-ViT, with color-coded bounding boxes. We provide more descriptive labels for each object detection (these are not what our planner has access to). For each task, we provide videos of the robot executing plans generated using InstructBLIP and PG-InstructBLIP.
+	  </p>
+	  
+	  
+	  <h3><b>Task 1: Move all objects that are not plastic to the side.</b></h3>
+	  <div class="irow">
+	    <video width="100%" controls> <source src="Task1.mp4" type="video/mp4"> </video>
+	    <div class="column">
+	      <h3> InstructBLIP </h3>
+	      <p><span class="C9DxTc " style="font-variant: normal;">Fail. It moved the </span><span class="C9DxTc " style="color: #ff9900; font-variant: normal;">plastic bottle</span><span class="C9DxTc " style="font-variant: normal;"> and did not move the </span><span class="C9DxTc " style="color: #4a86e8; font-variant: normal;">ceramic bowl</span><span class="C9DxTc " style="font-variant: normal;">.</span></p>
+	    </div>
+	    <div class="column">
+	      <h3> PG-InstructBLIP (ours) </h3>
+	      <p> Success! </p>
+	    </div>
+	  </div>
+
+	  <h3><b>Task 2: Move the metal objects into the container with metals.</b></h3>
+	  <div class="irow">
+	    <video width="100%" controls> <source src="Task2.mp4" type="video/mp4"> </video>
+	    <div class="column">
+	      <h3> InstructBLIP </h3>
+	      <p> Success! </p>
+	    </div>
+	    <div class="column">
+	      <h3> PG-InstructBLIP (ours) </h3>
+	      <p> Success! </p>
+	    </div>
+	  </div>
+
+	  <h3><b>Task 3: Move all containers that can be used to carry water to the side.</b></h3>
+	  <div class="irow">
+	    <video width="100%" controls> <source src="Task3.mp4" type="video/mp4"> </video>
+	    <div class="column">
+	      <h3> InstructBLIP </h3>
+	      <p dir="ltr" class="zfr3Q CDt4Ke " style="text-align: center;"><span class="C9DxTc " style="font-variant: normal;">Fail. It moved the </span><span class="C9DxTc " style="color: #45818e; font-variant: normal;">saucer</span><span class="C9DxTc " style="color: #000000; font-variant: normal;">, which cannot carry water.</span></p>
+	    </div>
+	    <div class="column">
+	      <h3> PG-InstructBLIP (ours) </h3>
+	      <p> Success! </p>
+	    </div>
+	  </div>
+
+	  <h3><b>Task 4: Put the two objects with the least mass into the least deformable container.</b></h3>
+	  <div class="irow">
+	    <video width="100%" controls> <source src="Task4.mp4" type="video/mp4"> </video>
+	    <div class="column">
+	      <h3> InstructBLIP </h3>
+	      <p dir="ltr" class="zfr3Q CDt4Ke " style="text-align: center;"><span class="C9DxTc " style="font-variant: normal;">Fail. It moved the </span><span class="C9DxTc " style="color: #a61c00; font-variant: normal;">snacks</span><span class="C9DxTc " style="font-variant: normal;"> and </span><span class="C9DxTc " style="color: #0000ff; font-variant: normal;">spoon</span><span class="C9DxTc " style="font-variant: normal;"> when the </span><span class="C9DxTc " style="color: #9900ff; font-variant: normal;">pen</span><span class="C9DxTc " style="font-variant: normal;"> and </span><span class="C9DxTc " style="color: #ff00ff; font-variant: normal;">pencil</span><span class="C9DxTc " style="font-variant: normal;"> are lighter.</span></p>
+	    </div>
+	    <div class="column">
+	      <h3> PG-InstructBLIP (ours) </h3>
+	      <p> Success! </p>
+	    </div>
+	  </div>
+
+	  <h3><b>Task 5: Move the most fragile object to the side.</b></h3>
+	  <div class="irow">
+	    <video width="100%" controls> <source src="Task5.mp4" type="video/mp4"> </video>
+	    <div class="column">
+	      <h3> InstructBLIP </h3>
+	      <p> Success! </p>
+	    </div>
+	    <div class="column">
+	      <h3> PG-InstructBLIP (ours) </h3>
+	      <p> Success! </p>
+	    </div>
+	  </div>
+
+
+	  
+	</div>
+      </div>
+  </body>
+</html>

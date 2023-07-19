@@ -55,6 +55,18 @@
   <body>
     <div class="topnav">
       <a href="index.html">Home</a>
+      <div class="rightnav">
+	<a href="scene1.html" class="active">Scene 1: Countertop</a>
+	<a href="scene2.html">Scene 2: Art Table</a>
+	<a href="scene3.html">Scene 3: Floor</a>
+	<a href="scene4.html">Scene 4: Kitchen A</a>
+	<a href="scene5.html">Scene 5: Kitchen B</a>
+	<a href="scene6.html">Scene 6: Salad Bar</a>
+	<a href="scene7.html">Scene 7: Living Room</a>
+	<a href="scene8.html">Scene 8: Shelf</a>
+	<a href="RS1/index.html">Robot Scene 1</a>
+	<a href="RS2/index.html">Robot Scene 2</a>
+      </div>
     </div>
     <div class="container" id="main">
       
@@ -66,7 +78,9 @@
 	    Scene 1: Countertop
           </h1>
 	  <div class="irow">
-	    <img src="img/eval2_scene1.png"  class="strict_column">
+	    <div class="strict_column">
+	      <img src="img/eval2_scene1.png">
+	    </div>
 	    
 	    <div class="strict_column">
 	      <p style="color: #bf9000"> A: bottle </p>
@@ -87,6 +101,12 @@
 	  </p>
 	  
 	  <h2><b>Task 3: Bring me all containers that you can confidently determine have water.</b></h2>
+
+	  <p class="text-justify">
+	    In this task, we want to determine if the VLM makes assumptions regarding the contents of containers. For instance, <span style="color: #bf9000"> A </span> is a dark container, so we cannot tell if the liquid inside is water, and containers <span style="color: #45818e"> C </span> and <span style="color: #9900ff"> F </span> are empty. The only container that should be brought is <span style="color: #a64d79"> B </span>, which visibly has water inside.
+	  </p>
+
+	  <h3>Generated Plans</h3>
 
 	  <div class="irow">
 	    <div class="tcolumn">
