@@ -145,7 +145,7 @@
             PhysObjects Dataset
           </h3>
           <p class="text-justify">
-	    To benchmark and improve VLMs for object-centric physical reasoning, we compiled the PhysObjects dataset, which contains 36.9K crowd-sourced and 417K automated physical concept annotations. The source of our images is the <a href="https://ai.meta.com/datasets/egoobjects-dataset/">EgoObjects dataset</a>.
+	    To benchmark and improve VLMs for object-centric physical reasoning, we compiled the PhysObjects dataset, which contains 39.6K crowd-sourced and 417K automated physical concept annotations. The source of our images is the <a href="https://ai.meta.com/datasets/egoobjects-dataset/">EgoObjects dataset</a>.
 
 	    We collected annotations for eight physical concepts, listed in the table below. We chose these concepts based on prior work and what we believe to be userful for robotic manipulation. However, we do not consider concepts that would be difficult for humans to estimate from only images, such as friction.
 
@@ -185,6 +185,14 @@
 	      <tr>
 		<td> Is Sealed </td>
 		<td> If a container will not spill if rotated </td>
+	      </tr>
+	      <tr>
+		<td> Density <i>(held-out)</i> </td>
+		<td> How much mass per unit of volume of an object </td>
+	      </tr>
+	      <tr>
+		<td> Liquid Capacity <i>(held-out)</i> </td>
+		<td> How much liquid a container can contain </td>
 	      </tr>
 	    </table>
           </p>
